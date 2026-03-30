@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: MozTransAPI
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/moztransapi?createDatabaseIfNotExist=true
+    username: root
+    password: ADMIN
+  jpa:
+    show-sql: true
+
+server:
+  port: 8081
+
+
+
