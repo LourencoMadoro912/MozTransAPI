@@ -1,0 +1,7 @@
+CREATE TABLE trip(
+id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+date DATE,
+time TIME,
+route_id BIGINT,
+CONSTRAINT fk_trip_route FOREIGN KEY(route_id) REFERENCES route(id)
+)

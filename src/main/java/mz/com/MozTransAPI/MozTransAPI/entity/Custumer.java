@@ -1,24 +1,21 @@
 package mz.com.MozTransAPI.MozTransAPI.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="route")
+@Table(name="custumer")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Route {
+public class Custumer {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
-    private String origin;
-    @NotBlank
-    private String destination;
+    private String name;
+    private String telefone;
 }
