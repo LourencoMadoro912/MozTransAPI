@@ -9,6 +9,7 @@ import java.time.LocalTime;
 @Getter
 @Setter
 public class TripRequestDTO {
+    private Long id;
     private LocalDate date;
     private LocalTime time;
     private Long routeId;

@@ -7,7 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CustomerDTO {
+    private Long id;
     @NotBlank
+
     private String name;
     private String telefone;
 }

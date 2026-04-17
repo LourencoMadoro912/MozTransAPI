@@ -17,8 +17,8 @@ public class Route {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+
     private String origin;
-    @NotBlank
+
     private String destination;
 }
