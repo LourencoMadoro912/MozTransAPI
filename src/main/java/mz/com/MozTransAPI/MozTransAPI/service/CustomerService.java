@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import mz.com.MozTransAPI.MozTransAPI.dto.CustomerDTO;
 import mz.com.MozTransAPI.MozTransAPI.entity.Custumer;
+import mz.com.MozTransAPI.MozTransAPI.exception.ResouceNotFoundException;
 import mz.com.MozTransAPI.MozTransAPI.repository.CustomerRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
@@ -34,7 +35,7 @@ public class CustomerService {
     }
 
     public CustomerDTO getCustumerId(Long id) {
-       Custumer custumer=customerRepository.findById(id).orElseThrow(() ->new EntityNotFoundException());
+       Custumer custumer=customerRepository.findById(id).orElseThrow(() ->new ResouceNotFoundException("ciente nao encontrado com id"+id));
        return modelMapper.map(custumer,CustomerDTO.class);
     }
 
