@@ -2,15 +2,13 @@ package mz.com.MozTransAPI.MozTransAPI.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name="custumer")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Custumer {
@@ -22,4 +20,10 @@ public class Custumer {
     private String name;
     @NotBlank
     private String telefone;
+
+    @NotBlank
+    private String email;
+
+    @NotBlank
+    private String password;
 }

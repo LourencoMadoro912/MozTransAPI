@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import mz.com.MozTransAPI.MozTransAPI.dto.CustomerDTO;
+import mz.com.MozTransAPI.MozTransAPI.dto.ResponseCostumer;
 import mz.com.MozTransAPI.MozTransAPI.entity.Custumer;
 import mz.com.MozTransAPI.MozTransAPI.service.CustomerService;
 import org.springframework.data.domain.Page;
@@ -26,12 +27,12 @@ public class CustomerController {
 private final CustomerService customerService;
 
     @PostMapping
-    public ResponseEntity<CustomerDTO> addCustumer(@RequestBody @Valid CustomerDTO dto, UriComponentsBuilder uriBuilder){
+    public ResponseEntity<ResponseCostumer> addCustumer(@RequestBody @Valid CustomerDTO dto, UriComponentsBuilder uriBuilder){
 
-       CustomerDTO customerDTO= customerService.addCustumer(dto);
-        URI enderenco=uriBuilder.path("/custumer/{id}").buildAndExpand(customerDTO.getId()).toUri();
+       ResponseCostumer responseCostumer= customerService.addCustumer(dto);
+        URI enderenco=uriBuilder.path("/custumer/{id}").buildAndExpand(responseCostumer.getId()).toUri();
 
-        return ResponseEntity.created(enderenco).body(customerDTO);
+        return ResponseEntity.created(enderenco).body(responseCostumer);
     }
 
     @GetMapping
